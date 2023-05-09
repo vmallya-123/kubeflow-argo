@@ -9,8 +9,6 @@ spec:
     repoURL: https://github.com/vmallya-123/kubeflow-argo.git
     targetRevision: main
     path: .
-    kustomize:
-      version: v4.0.5
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
