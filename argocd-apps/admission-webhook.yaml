@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: admission-webhook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/vmallya-123/kubeflow-argo.git
+    targetRevision: main
+    path: apps/admission-webhook/upstream/overlays/cert-manager
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
